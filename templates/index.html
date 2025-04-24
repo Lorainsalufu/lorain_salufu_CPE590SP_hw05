@@ -1,0 +1,66 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNIST Digit Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="main-content">
+    <div class="container">
+        <header>
+            <h1>MNIST Digit Classification</h1>
+            <p>A machine learning model deployment using PyTorch, ONNX, and Flask</p>
+        </header>
+        
+    
+        
+            <div class="input-section">
+                <h2>Upload Image </h2>
+                <form id="upload-form" enctype="multipart/form-data">
+                    <input type="file" id="image-upload" accept="image/png, image/jpeg" required />
+                </form>
+            <div id="image-preview">
+                <h3>Image Preview:</h3>
+                <img id="preview-img" src="" alt="Uploaded Image Preview" />
+            </div>
+            <button id="predict-button" class ="button-primary">Predict</button>
+            <p>Only works if you upload an image</p>
+            </div>
+        
+
+        <div class="result-section">
+            <h2>Prediction Result</h2>
+            <div id="prediction-result">
+                <p>Upload Image and click "Predict" to see the results.</p>
+            </div>
+            <div class="chart-container">
+                <canvas id="probability-chart"></canvas>
+            </div>
+        </div>
+
+        <div class="samples-section">
+            <h2>Sample Images</h2>
+            <p>Click sample images to see the probability chart</p>
+            <div class="sample-images">
+                {% for sample in sample_images %}
+                  <img src="{{ url_for('static', filename='samples/' + sample) }}" alt="Sample {{ loop.index }}" class="sample-img" data-sample="{{ sample }}" />
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="info-section">
+            <h2>About The Project</h2>
+            <p>This is a deployment of a PyTorch neural network model trained on the MNIST dataset. The model was exported to ONNX format for efficient inference.</p>
+        </div>
+
+        <footer>
+            <p>CPE 490/590 project - Machine Learning for Engineering Applications <br/> Lorain Salufu</p>
+        </footer>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
