@@ -1,8 +1,8 @@
 # Lorain_Salufu_CPE590-ST_hw05.
 To run the webapp, make sure to make a directory to store the following data tree:
 ~/(any_folder_name)
-  -app.py
-  -MNIST_classifier.onnx
+  -mnistapp.py
+  -MNIST_digit_classifier.onnx
   -static
     -css
       -styles.css
