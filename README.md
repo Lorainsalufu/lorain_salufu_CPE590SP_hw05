@@ -19,7 +19,7 @@ Move to the directory into the (any_folder_name) using "cd any_folder_name"
 Run "-n pythonenv python=3.10 -y " and "uv pythonenv" to create and then open a virtual python environment
 Install dependencies using:
 "pip install flask numpy onnxruntime pandas scikit-learn gunicorn flask_wtf werkzeug wtforms pillow python-magic-bin."
-Finally, the webpage can be open through "python app.py."
+Finally, the webpage can be open through "python mnistapp.py."
 
 URL of python notebook used for the first part of the homework: 
 https://colab.research.google.com/drive/1uZlQMeK8Ee3EV04ZycGQN0zK0t0Nln5x?usp=shari
